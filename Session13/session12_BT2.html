@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Session 12 - Bài Tập 2</title>
+  </head>
+  <body>
+    <script>
+      // Khai báo mảng 2 chiều
+      var arrInt = [];
+      //Nhập dữ liệu cho mảng 2 chiều
+      let row = parseInt(prompt("Nhập vào số dòng của mảng 2 chiều"));
+      let col = parseInt(prompt("Nhập vào số cột của mảng 2 chiều"));
+      for (let i = 0; i < row; i++) {
+        let arrRow = [];
+        for (let j = 0; j < col; j++) {
+          let elementij = parseInt(prompt("Nhập giá trị phần tử"));
+          arrRow.push(elementij);
+        }
+        arrInt.push(arrRow);
+      }
+      //In giá trị các phần tử của mảng 2 chiều
+      for (let i = 0; i < row; i++) {
+        for (let j = 0; j < col; j++) {
+          document.write(arrInt[i][j]);
+          document.write("&nbsp;&nbsp;");
+        }
+        document.writeln("<br>");
+      }
+      document.writeln("<br>");
+      document.write("Các giá trị nằm trên đường biên:<br>");
+      for (let i = 0; i < row; i++) {
+        for (let j = 0; j < col; j++) {
+          if (i == 0 || j == 0 || i == row - 1 || j == col - 1) {
+            //Các phần tử nằm trên đường biên
+            document.write(arrInt[i][j]);
+          } else {
+            document.write("&nbsp;&nbsp;");
+          }
+          document.write("&nbsp;&nbsp;");
+        }
+        document.writeln("<br>");
+      }
+      document.writeln(
+        "<br>Các phần tử nằm trên đường chéo chính và phụ: <br>"
+      );
+      //   In các phần tử nằm trên chéo chính và chéo phụ
+      if (row == col) {
+        //Ma trận vuông
+        document.writeln("Các phần tử trên đường chéo chính: <br>");
+        for (let i = 0; i < row; i++) {
+          for (let j = 0; j < col; j++) {
+            if (i == j) {
+              // Phần tử nằm trên đường chéo chính
+              document.write(arrInt[i][j]);
+              document.write("&nbsp;&nbsp;");
+            }
+          }
+        }
+        document.writeln("<br>");
+        document.writeln("Các phần tử trên đường chéo phụ: <br>");
+        for (let i = 0; i < row; i++) {
+          for (let j = 0; j < col; j++) {
+            if (i + j == row - 1) {
+              // Phần tử nằm trên đường chéo phụ
+              document.write(arrInt[i][j]);
+              document.write("&nbsp;&nbsp;");
+            }
+          }
+        }
+      } else {
+        document.write(
+          "Ma trận không phải là ma trận vuông, không có chéo chính và chéo phụ"
+        );
+      }
+      //Sắp xếp dòng tăng dần
+      for (let i = 0; i < row; i++) {
+        //đang xét arrInt[i] --> row --> mảng 1 chiều
+        for (let j = 0; j < col - 1; j++) {
+          for (let k = j + 1; k < col; k++) {
+            if (arrInt[i][j] > arrInt[i][k]) {
+              let temp = arrInt[i][j];
+              arrInt[i][j] = arrInt[i][k];
+              arrInt[i][k] = temp;
+            }
+          }
+        }
+      }
+      document.writeln("<br>Ma trận sau khi sắp xếp là: <br>");
+      for (let i = 0; i < row; i++) {
+        for (let j = 0; j < col; j++) {
+          document.write(arrInt[i][j]);
+          document.write("&nbsp;&nbsp;");
+        }
+        document.writeln("<br>");
+      }
+    </script>
+  </body>
+</html>

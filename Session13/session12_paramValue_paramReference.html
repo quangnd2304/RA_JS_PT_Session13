@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phân biệt tham trị và tham chiếu</title>
+  </head>
+  <body>
+    <script>
+      //Truyền tham trị
+      function add(num1, num2) {
+        num1++;
+        return num1 + num2;
+      }
+      let a = 10;
+      let b = 5;
+      let sum = add(a, b);
+      console.log("Tổng 2 số là: ", sum);
+      console.log("Giá trị của a sau khi gọi hàm add: ", a);
+      //Truyền tham chiếu
+      let arrInt = [3, 5, 8];
+      function printArray(arr) {
+        for (let i = 0; i < arr.length; i++) {
+          arr[i] += 1;
+          console.log(arr[i]);
+        }
+      }
+      printArray(arrInt);
+      console.log("giá trị các phần tử mảng sau khi gọi printArray: ", arrInt);
+      //Hàm có return và không return
+      function multiply1(num1, num2) {
+        console.log("Tích 2 số:", num1 * num2);
+      }
+      console.log(multiply1(3, 5));
+      function multiply2(num1, num2) {
+        return num1 * num2;
+      }
+      console.log(multiply2(4, 5));
+    </script>
+  </body>
+</html>

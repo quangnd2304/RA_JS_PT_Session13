@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khai báo và gọi hàm</title>
+  </head>
+  <body>
+    <script>
+      // Xây dựng hàm in ra "wellcome to Rikkei Academy"
+      // Hàm không có tham số
+      function wellcome() {
+        console.log("Wellcome to Rikkei Academy");
+      }
+      //Gọi hàm
+      wellcome();
+      //   Xây dựng hàm hello user: có 1 tham số truyền vào là tên user
+      function hello(userName) {
+        console.log("Hello " + userName);
+      }
+      hello("Nguyễn Văn A");
+      //Xây dựng hàm trả về tên đầy đủ của người: 2 tham số firstName và lastName
+      function getFullName(firstName, lastName) {
+        let fullName = firstName + " " + lastName;
+        return fullName;
+      }
+      let fullName = getFullName("Nguyễn Văn", "Bình");
+      console.log("Tên đầy đủ: ", fullName);
+      //Phạm vi biến: phạm vi function - biến cục bộ
+    </script>
+  </body>
+</html>
